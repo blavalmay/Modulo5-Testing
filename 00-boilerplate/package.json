@@ -11,7 +11,10 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "test": "vitest -c ./config/test/config.ts",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test:e2e:cy": "npm start -- start:e2e",
+    "start:e2e:cy": "cypress open",
+    "test:e2e": "playwright test --ui"
   },
   "imports": {
     "#*": "./src/*"
@@ -43,13 +46,17 @@
     "react-spinners": "^0.15.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@testing-library/cypress": "^10.0.3",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.11",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
+    "cypress": "^14.2.0",
     "jsdom": "^25.0.1",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
